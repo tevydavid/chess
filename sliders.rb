@@ -1,0 +1,10 @@
+class Sliders < Piece
+  
+
+
+
+
+
+
+
+end
