@@ -1,6 +1,7 @@
 require_relative "display"
 require_relative "piece"
 require_relative "sliders"
+require_relative "knight"
 
 
 class Board
@@ -15,9 +16,9 @@ class Board
     [0, 1, 6, 7].each do |row|
       @grid[row].each_index do |space|
         if row == 0 || row == 1
-          @grid[row][space] = Rook.new(self, [row,space], :red)
+          @grid[row][space] = Pawn.new(self, [row,space], :red)
         else
-          @grid[row][space] = Rook.new(self, [row,space], :black)
+          @grid[row][space] = Pawn.new(self, [row,space], :black)
         end
       end
     end

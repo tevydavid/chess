@@ -16,11 +16,9 @@ class Piece
   end
 
   def valid_move?(end_pos)
-    if @board.[](end_pos).nil?
-      true
-    else
-      return false if @board.[](end_pos).color == color
-    end
+    return false if !@board.[](end_pos).nil? && @board.[](end_pos).color == @color
+    return false unless pos_move?(end_pos)
+    true
   end
 
 

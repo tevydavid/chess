@@ -28,7 +28,7 @@ class Display
 
   def colors_for(i, j)
     if [i, j] == @selected_pos
-      bg = :red
+      bg = :blue
     elsif [i, j] == @cursor_pos
       bg = :light_blue
     elsif (i + j).even?
@@ -37,7 +37,7 @@ class Display
       bg = :green
     end
     { background: bg }
-    
+
   end
 end
 
