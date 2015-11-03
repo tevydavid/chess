@@ -21,7 +21,8 @@ class Piece
       return false if @board.[](end_pos).color == color
     end
   end
-
-
   
+
+
+
 end
