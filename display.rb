@@ -37,6 +37,7 @@ class Display
       bg = :green
     end
     { background: bg }
+    
   end
 end
 
