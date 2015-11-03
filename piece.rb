@@ -1,17 +1,18 @@
+require "colorize"
 
 class Piece
   attr_reader :color
-
-  def initialize(board, pos, type = "i", color = :black)
+  attr_accessor :current_pos
+  def initialize(board, pos, color)
     @board = board
     @current_pos = pos
     @past_pos = []
-    @type = type
+    @type = "i"
     @color = color
   end
 
   def to_s
-    " #{@type} "
+    " #{@type} ".colorize(@color)
   end
 
   def valid_move?(end_pos)
@@ -21,7 +22,7 @@ class Piece
       return false if @board.[](end_pos).color == color
     end
   end
-  
+
 
 
 

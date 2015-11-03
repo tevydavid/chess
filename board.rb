@@ -1,5 +1,6 @@
 require_relative "display"
 require_relative "piece"
+require_relative "sliders"
 
 
 class Board
@@ -13,7 +14,11 @@ class Board
   def populate
     [0, 1, 6, 7].each do |row|
       @grid[row].each_index do |space|
-        @grid[row][space] = Piece.new(self, [row,space])
+        if row == 0 || row == 1
+          @grid[row][space] = Rook.new(self, [row,space], :red)
+        else
+          @grid[row][space] = Rook.new(self, [row,space], :black)
+        end
       end
     end
   end
@@ -43,6 +48,7 @@ class Board
       raise "Invalid move!" unless @grid[start[0]][start[1]].valid_move?(end_pos)
       @grid[end_pos[0]][end_pos[1]] = @grid[start[0]][start[1]]
       @grid[start[0]][start[1]] = nil
+      @grid[end_pos[0]][end_pos[1]].current_pos = end_pos
     rescue Exception => e
       puts e.message
     end
