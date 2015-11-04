@@ -48,7 +48,7 @@ if __FILE__ == $PROGRAM_NAME
   while true
     d.render
     d.get_input
-    system ("clear")
+    system "clear"
   end
 
 end

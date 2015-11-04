@@ -6,6 +6,12 @@ class Sliders < Piece
     true
   end
 
+  def valid_move!(end_pos)
+    return false unless super
+    return false if piece_in_path?(end_pos)
+    true
+  end
+
   def piece_in_path?(end_pos)
     step = [0, 0]
     if @current_pos.first < end_pos.first
