@@ -37,7 +37,7 @@ class King < Sliders
 
   def initialize(board, pos, color)
     super
-    @type = "K"
+    @type = "♔"
   end
 
   def pos_move?(end_pos)
@@ -50,7 +50,7 @@ class Queen < Sliders
 
   def initialize(board, pos, color)
     super
-    @type = "Q"
+    @type = "♕"
   end
 
   def pos_move?(end_pos)
@@ -63,7 +63,7 @@ class Bishop < Sliders
 
   def initialize(board, pos, color)
     super
-    @type = "B"
+    @type = "♗"
   end
 
   def pos_move?(end_pos)
@@ -75,7 +75,7 @@ class Rook < Sliders
 
   def initialize(board, pos, color)
     super
-    @type = "R"
+    @type = "♖"
   end
 
   def pos_move?(end_pos)
@@ -87,7 +87,7 @@ class Pawn < Sliders
 
   def initialize(board, pos, color)
     super
-    @type = "i"
+    @type = "♙"
     if pos.first == 1
       @direction = 1
     else

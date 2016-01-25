@@ -7,7 +7,7 @@ class Piece
     @board = board
     @current_pos = pos
     @past_pos = []
-    @type = "i"
+    @type = "♟"
     @color = color
   end
 

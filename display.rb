@@ -23,6 +23,7 @@ class Display
       end
       puts
     end
+    puts "   #{board.current_player} Player's Turn"
     nil
   end
 

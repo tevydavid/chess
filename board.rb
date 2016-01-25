@@ -6,10 +6,16 @@ require "byebug"
 
 class Board
   attr_reader :grid
+  attr_reader :current_player
 
   def initialize(grid = Array.new(8) { Array.new(8) })
     @grid = grid
+    @current_player = 'Red'
     populate
+  end
+
+  def switch_player
+    @current_player = @current_player == 'Red' ? 'Black' : 'Red'
   end
 
   def temp_move(start, end_pos)
@@ -97,6 +103,7 @@ class Board
       @grid[end_pos[0]][end_pos[1]] = @grid[start[0]][start[1]]
       @grid[start[0]][start[1]] = nil
       @grid[end_pos[0]][end_pos[1]].current_pos = end_pos
+      switch_player
     rescue Exception => e
       puts e.message
     end
